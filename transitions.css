@@ -1,0 +1,31 @@
+.box {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(248,52,52);
+    position:absolute;
+    top: calc(50% - 25px);
+    left: calc(50%);
+    transition-property: transform;
+    transition-duration:2s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+    transition: transform 2s 0s ease-in-out;
+    
+}
+
+.slide-right {
+    transform:translateX(300px);
+}
+
+.slide-left {
+    transform:translateX(-300px);
+}
+.slide-up {
+    transform:translateY(-300px)
+}
+.slide-down {
+    transform:translateY(300px);
+}
+.double-size {
+    transform:scale(2);
+}

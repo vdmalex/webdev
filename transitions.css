@@ -9,7 +9,7 @@
     transition-duration:2s;
     transition-delay: 0s;
     transition-timing-function: ease-in-out;
-    transition: transform 2s 0s ease-in-out;
+    transition: all 2s 0s ease-in-out;
     
 }
 
@@ -29,3 +29,31 @@
 .double-size {
     transform:scale(2);
 }
+.scale-up {
+    transform:scale(3);
+}
+.scale-down {
+    transform:scale(.25);
+ }
+ .rotate {
+    transform:rotate(360deg);
+ }
+ .opaqueify{
+    opacity:0;
+
+ }
+ button{
+    font-size:18px;
+    padding:15px 25px;
+    border: 1px solid rgb(41,128,185);
+    color: rgb(41,128,185);
+    transition: all 0.5s;
+ }
+
+ button:hover {
+    font-size:100px;
+    color:white;
+    background-color:rgb(41,128,185);
+    border-color:rgb(41,128,185);
+    cursor:pointer;
+ }

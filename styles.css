@@ -127,6 +127,10 @@ a:hover {
     display:none;
 }
 
+#addLinkPanel {
+    animation: slide-down 1s 0s ease-in;
+}
+
 
 /* button */
 input[type='submit'],button{
@@ -202,5 +206,21 @@ input[type='submit']:hover,button:hover{
 @media only screen and (min-width: 1280px){
     .flex-item{
         flex-basis:33%;
+    }
+}
+
+/* animations */
+@keyframes slide-down {
+    0%{
+        transform: translateY(-1000px);
+    }
+    90%{
+        transform: translateY(25px);
+    }
+    95%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform:translateY(0px);
     }
 }

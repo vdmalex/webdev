@@ -168,6 +168,10 @@ input[type='submit']:hover,button:hover{
     position:relative;
 }
 
+.link:hover {
+    box-shadow: 0 0 3px var(--main-accent);
+}
+
 .panel {
     margin: 5px 5px 0px 0px;
 }

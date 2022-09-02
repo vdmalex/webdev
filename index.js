@@ -11,19 +11,22 @@ let linkCategories = [];
 let editIndex = -1;
 let links = [
     {
-        title: 'New Link1',
-        url:'url.com',
-        categories: ['node','angular']
+        title: 'Wes Bos Courses',
+        url:'http://wesbos.com/courses',
+        categories: ['Node','ES6','Flexbox','React'],
+        date: new Date()
     },
     {
-        title: 'New Link2',
-        url:'url.com2',
-        categories: ['js','angular']
+        title: 'Traversy Media',
+        url:'https://www.youtube.com/c/TraversyMedia/videos',       
+        categories: ['Node','CSS','JavaScript','Angular'],
+        date: new Date()
     },
     {
-        title: 'New Link3',
-        url:'url.com3',
-        categories: ['node','bootstrap']
+        title: 'Colt Steele',
+        url:'https://www.udemy.com/user/coltsteele',
+        categories: ['Node','JavaScript','React','MEAN','Mongo'],
+        date: new Date()
     },
 ];
 
@@ -38,12 +41,14 @@ linkCategory.addEventListener('keydown',function(event){
         displayLinkCategories();
     }
 })
+
 addBtn.addEventListener('click', event =>{
     console.log("add")
     event.preventDefault();
     showFormPanel();
 
 });
+
 cancelButton.addEventListener('click', event =>{
     console.log("cancel")
     event.preventDefault();
@@ -61,6 +66,7 @@ function hideFormPanel(){
     addLinkContainer.classList.add('hidden');
     clearLinkForm();
 }
+
 function displayLinkCategories(){
     console.log("Displaying link categories...")
     addedCategories.innerHTML = '' ;
@@ -91,7 +97,8 @@ submitButton.addEventListener('click', event =>{ // don't need parentheses aroun
     const newLink = {
         title,
         url,
-        categories
+        categories,
+        date: new Date()
     }
     if(editIndex ===-1){
         links.unshift(newLink); // unshift = add to begining, push = add to end  
@@ -121,7 +128,7 @@ function displayLinks(){
             ${link.title}
           </h1>
         </a>
-        <p class="link-date">${Date.now()}</p>
+        <p class="link-date">${formatDate(link.date)}</p>
         <div class="categories">
           Categories:`;
           for(let category of link.categories){
@@ -150,4 +157,8 @@ function editLink(index){
     linkUrl.value = links[index].url;
     linkCategories = links[index].categories;
     showFormPanel();
+}
+
+function formatDate(date){
+    return `${("0" + (date.getMonth()+1)).slice(-2)}/${("0"+date.getDate()).slice(-2)}/${date.getFullYear()}`
 }
